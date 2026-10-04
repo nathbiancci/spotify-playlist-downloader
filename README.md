@@ -1,14 +1,18 @@
 # spotify-playlist-downloader - Downloading Spotify Playlists
 
-From Playlist ID:
+Requires Python 3.9+ and `ffmpeg` on your PATH.
+
 ```
+pip install -r requirements.txt
+```
+
+From a Playlist ID, URI or URL:
+```
+python3 main.py -u "https://open.spotify.com/playlist/PLAYLIST_ID" -i CLIENT_ID -s CLIENT_SECRET [-d OUTPUT_DIRECTORY]
 python3 main.py -p PLAYLIST_SPOTIFY_ID -i CLIENT_ID -s CLIENT_SECRET [-d OUTPUT_DIRECTORY]
 ```
 
-From Playlist URI:
-```
-python3 main.py -u PLAYLIST_SPOTIFY_URI -i CLIENT_ID -s CLIENT_SECRET [-d OUTPUT_DIRECTORY]
-```
+`-i`/`-s` can be omitted if `SPOTIPY_CLIENT_ID` and `SPOTIPY_CLIENT_SECRET` are set. Tracks already downloaded are skipped, so re-running resumes.
 
 
 --------------------------------------------------
