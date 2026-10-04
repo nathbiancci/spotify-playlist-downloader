@@ -12,6 +12,8 @@ python3 main.py -u "https://open.spotify.com/playlist/PLAYLIST_ID" -i CLIENT_ID 
 python3 main.py -p PLAYLIST_SPOTIFY_ID -i CLIENT_ID -s CLIENT_SECRET [-d OUTPUT_DIRECTORY]
 ```
 
+If Spotify returns 403 Forbidden (apps created after Nov 2024), add `--login` to sign in with your Spotify account (add `http://127.0.0.1:8888/callback` as a Redirect URI in your app settings). Or export the playlist to CSV with https://exportify.net and run `python3 main.py -f playlist.csv`. A text file with one `Artist - Title` per line also works.
+
 `-i`/`-s` can be omitted if `SPOTIPY_CLIENT_ID` and `SPOTIPY_CLIENT_SECRET` are set. Tracks already downloaded are skipped, so re-running resumes.
 
 
